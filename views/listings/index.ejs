@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLust</title>
+</head> -->
+  
+
+<!-- app boilerplate layout -->
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3>All Listings</h3>
+
+
+    
+<!-- main body or card start-->
+    <div class="row  row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        
+    <% for( listing of allListings ) { %>
+
+        <!-- bootstrap card start -->
+        
+        <a href="/listings/<%= listing._id %>"  class="listing-link">
+
+            <div class="card" >
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="listings_image" style="height: 20rem;">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <b><%= listing.title %></b> 
+                    <br>
+                    PKR: <%= listing.price.toLocaleString("en-IN") %> / night
+                  </p>
+                </div>
+            </div>
+
+        </a>
+
+        <!-- bootstrap card end -->
+    
+    <% } %>
+
+    </div>
+
+    <!-- main body or card start-->
+    
+</body>
+<!-- </html> -->
